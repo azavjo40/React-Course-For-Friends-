@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter } from 'react-router-dom'
+import { Router } from './routers/Router';
+import { Navbar } from './containers/navbar/Navbar';
+import { useState } from 'react';
+import { Context } from './context/Context';
 
 function App() {
+  const [valueVasket, setBalueVasket] = useState([])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context.Provider value={{ valueVasket, setBalueVasket }}>
+      <div className="app">
+        <BrowserRouter>
+          <Navbar />
+          <Router />
+        </BrowserRouter>
+      </div>
+    </Context.Provider>
   );
 }
 

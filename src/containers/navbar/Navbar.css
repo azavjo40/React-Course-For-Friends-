@@ -1,0 +1,21 @@
+.navbar {
+  height: 100px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+
+.link:hover {
+  color: rgb(81, 79, 79);
+}
+
+.basket-total {
+  color: red;
+}
